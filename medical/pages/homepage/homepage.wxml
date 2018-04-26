@@ -1,0 +1,64 @@
+<!--pages/homepage/homepage.wxml-->
+<view class='homepage'>
+  <scroll-view scroll-y="true" class="page-body" bindscrolltolower="loadMore">
+    <!-- 滚动屏 -->
+    <view class="swiper">
+      <swiper indicator-dots="{{indicatorDots}}" vertical="{{vertical}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+        <block wx:for-items="{{banner_url}}" wx:key="item.id">
+          <swiper-item>
+            <block wx:if="{{item}}">
+              <image src="{{item}}" mode="aspectFill" />
+            </block>
+            <block wx:else>
+              <image src="../../images/default_pic.png" mode="aspectFill"></image>
+            </block>
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+    <!-- 导航选项 -->
+    <view class='nav_top'>
+      <block wx:for="{{navTopItems}}" wx:key="item.id">
+        <view class="nav_top_items {{curNavId == item.id}}" bindtap='navTopItems' data-id="{{item.id}}" data-index="{{index}}">
+          <image src="{{item.icon}}" mode="aspectFill"></image>
+          <text>{{item.title}}</text>
+        </view>
+      </block>
+    </view>
+    <text class='category-title'>医院推荐</text>
+    <!-- <text class='category-title'>{{navSectionItems}}</text> -->
+    <!-- 医院列表 -->
+    <view class="nav_section">
+      <view wx:if="{{navSectionItems}}">
+        <block wx:for="{{navSectionItems}}" wx:key="item.id">
+          <view class="nav_section_items">
+            <!--image-->
+            <view class="section_image" bindtap="navigateDetail" data-aid="{{item.id}}">
+              <block wx:if="{{item.hosp_logo}}">
+                <image src="{{item.hosp_logo}}" mode="aspectFill"></image>
+              </block>
+              <block wx:else>
+                <image src="../../images/default_pic.png" mode="aspectFill"></image>
+              </block>
+            </view>
+            <!--content-->
+            <view class="section_cont" bindtap="navigateDetail" data-aid="{{item.id}}">
+              <view class="section_cont_sub">
+                <text>{{item.hosp_name}}</text>
+              </view>
+              <view id='yyx' style="flex-direction:row; display: flex;">
+                <view class="section_cont_scale">{{item.grade}}</view>
+                <view class="section_cont_price">预约量：{{item.orders}}</view>
+              </view>
+              <view>
+              <image src='../../images/addr.png' class='section_cont_icon'></image>
+              <text>{{item.hosp_addr}}</text>
+                </view>
+            </view>
+          </view>
+        </block>
+      </view>
+      <!-- <view wx:else>暂无数据</view> -->
+    </view>
+  </scroll-view>
+</view>

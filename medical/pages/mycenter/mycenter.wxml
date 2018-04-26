@@ -1,0 +1,37 @@
+<!--pages/mycenter/mycenter.wxml-->
+<view class='page'>
+<view class="userinfo">
+    <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+    <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+  </view>
+  <view class="person-list">
+    <view class="list-item">
+      <image class="item-icon" src="../../images/recordicon.png"></image>
+      <text class="item-text">我的预约</text>
+      <image class="item-arrows" src="../../images/arrowright.png"></image>
+    </view>
+    <view class="person-line"></view>
+    <view class="list-item">
+      <image class="item-icon" src="../../images/homeicon.png"></image>
+      <text class="item-text">家庭档案</text>
+       <image class="item-arrows" src="../../images/arrowright.png"></image>
+    </view>
+    <view class="person-line"></view>
+    <view class="list-item">
+      <image class="item-icon" src="../../images/sericon.png"></image>
+      <text class="item-text">客服咨询</text>
+       <image class="item-arrows" src="../../images/arrowright.png"></image>
+    </view>
+    <view class="person-line"></view>
+    <view class="list-item">
+      <image class="item-icon" src="../../images/peoicon.png"></image>
+      <text class="item-text">关于我们</text>
+       <image class="item-arrows" src="../../images/arrowright.png"></image>
+    </view>
+    <view class="person-line"></view>
+    <view class='footer'>温馨提示
+    <text class='footer-text'>首次使用小程序,需要在预约过程中绑定信息后才能查看个人中心的预约信息和家庭档案</text>
+    </view>
+  </view>
+</view>
+

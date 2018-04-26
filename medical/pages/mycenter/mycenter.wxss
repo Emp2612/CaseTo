@@ -1,0 +1,89 @@
+/* pages/mycenter/mycenter.wxss */
+.page {
+  width: 100%;
+}
+
+/* 微信头像昵称 */
+
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 300rpx;
+  line-height: 100rpx;
+  text-align: center;
+  background-color: #186cb4;
+  border-radius: 0 0 400rpx 0;
+}
+
+.userinfo-avatar {
+  width: 108rpx;
+  height: 108rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  color: #000;
+}
+
+/* item列表 */
+
+.person-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30rpx;
+}
+
+.list-item {
+  width: 600rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 100rpx;
+}
+
+.item-icon {
+  width: 40rpx;
+  height: 40rpx;
+  margin-left: 10rpx;
+}
+
+.item-arrows {
+  width: 17rpx;
+  height: 32rpx;
+  padding-left: 350rpx;
+}
+
+.item-text {
+  color: gray;
+  font-size: 35rpx;
+  margin-left: 20rpx;
+}
+
+.person-line {
+  width: 85%;
+  height: 2rpx;
+  background: lightgray;
+  margin: center;
+}
+
+/* 提示文字 */
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  margin-top: 60rpx;
+  font-size: 32rpx;
+  color: #186cb4;
+  text-align: center;
+}
+
+.footer-text {
+  margin-top: 10rpx;
+  font-size: 28rpx;
+  margin-left: 105rpx;
+  margin-right: 105rpx;
+}
