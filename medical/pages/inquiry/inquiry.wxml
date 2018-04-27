@@ -1,2 +1,36 @@
 <!--pages/inquiry/inquiry.wxml-->
-<text>pages/inquiry/inquiry.wxml</text>
+<view class='page'>
+  <view class='nav'>
+    <!-- 区域Tab -->
+    <view class="nav-son borders{{shownavindex==1?'active':''}}" bindtap='arealist' data-nav="1">
+      <view class='content'>{{cityCode[city_name]}}</view>
+      <view class="icon"></view>
+    </view>
+    <!-- 等级Tab -->
+    <view class="nav-son borders{{shownavindex==2?'active':''}}" bindtap='gradelist' data-nav="2">
+      <view class='content'>{{hosp_grade}}</view>
+      <view class="icon"></view>
+    </view>
+  </view>
+  <!-- 区域下拉框 -->
+  <view class="temp temp1 {{nzopen ? 'slidown' : 'slidup'}} {{nzshow ? 'disappear':''}}">
+    <view class="slidownbottom">
+      <block wx:for="{{cityCode[city_name]}}" wx:key="unique">
+        <view class="sdbitem " bindtap='selectsdbitem'> {{index}}</view>
+      </block>
+    </view>
+  </view>
+  <!-- 等级下拉框 -->
+  <view class="temp temp2 {{pxopen ? 'slidown' : 'slidup'}} {{pxshow ? 'disappear':''}}">
+    <view class='tempheight'>
+      <view class='slidowntop'>
+      </view>
+      <view class="commanders">
+        <block wx:for="{{commanders}}" wx:key="unique">
+          <view class="sdbitem {{commander==item ? ' active ' : ' '}}" data-commander='{{item}}' bindtap='selectcmditem'> {{item}}</view>
+        </block>
+      </view>
+    </view>
+  </view>
+  <view class="fullbg {{isfull ?'fullopacity':''}}" bindtap="hidebg"></view>
+</view>

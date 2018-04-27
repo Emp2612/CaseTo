@@ -1,1 +1,160 @@
 /* pages/inquiry/inquiry.wxss */
+
+.page {
+  width: 100%;
+  background: #fff;
+}
+/* 顶部下拉菜单 */
+.nav{
+  position: relative;
+  z-index: 99;
+  display: flex;
+  border-top: 1rpx solid #d1d3d4;
+  border-bottom: 1rpx solid #d1d3d4;
+  background: #fff;
+}
+.nav-son{
+  display: flex;
+  flex: 1;
+  text-align: center;
+  height: 70rpx;
+  align-items: center;
+  justify-content: center;
+  font-size: 24rpx;
+}
+.borders {
+  border-left: 1px solid #e6e6e6;
+  border-right: 1px solid #e6e6e6;
+}
+
+.content {
+  display: inline-block;
+}
+
+.icon {
+  display: inline-block;
+  border: 4px solid transparent;
+  border-top: 4px solid #9b9b9b;
+  margin-left: 5px;
+}
+
+.temp {
+  position: relative;
+  z-index: 4;
+  font-size: 24rpx;
+}
+
+.temp1 {
+  display: flex;
+  width: 100%;
+  height: 400rpx;
+  overflow-y: scroll;
+  background: #fff;
+  color: #666;
+}
+
+.fullbg {
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  background: rgb(1, 1, 1);
+  transition: all 2s;
+  opacity: 0;
+}
+
+.fullopacity {
+  opacity: 0.2;
+}
+
+.nav-son.active .content {
+  color: #fa871e;
+}
+
+.nav-son.active .icon {
+  border-bottom: 4px solid #fa871e;
+  border-top: 0;
+}
+
+@keyframes slidown {
+  from {
+    transform: translateY(-100%);
+  }
+
+  to {
+    transform: translateY(0%);
+  }
+}
+
+.slidown {
+  display: block;
+  animation: slidown 0.2s ease-in both;
+}
+
+@keyframes slidup {
+  from {
+    transform: translateY(0%);
+  }
+
+  to {
+    transform: translateY(-100%);
+  }
+}
+
+.tempheight {
+  height: 1020rpx;
+  overflow-y: scroll;
+}
+
+.slidup {
+  display: block;
+  animation: slidup 0.2s ease-in both;
+}
+
+.disappear {
+  display: none;
+}
+
+.slidowntop {
+  display: flex;
+  flex-direction: row;
+  padding: 20rpx 24rpx 10rpx 24rpx;
+}
+
+/* 目的地排列 */
+.slidownbottom {
+  margin-top: 10rpx;
+  padding: 10rpx;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.sdbitem {
+  width: 119rpx;
+  text-align: center;
+  border: solid #f44336 1rpx;
+  margin: 12rpx;
+  justify-content: space-between;
+  padding: 12rpx 19rpx 12rpx 19rpx;
+}
+
+.temp2 {
+  width: 100%;
+  height: 500rpx;
+  /* overflow-y: scroll; */
+  background: #fff;
+  color: #666;
+  
+}
+.commanders{
+  padding: 10rpx;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.sdbitem.active{  
+  color: #fa871e;  
+  background-color: #F1E6B8;
+}  
