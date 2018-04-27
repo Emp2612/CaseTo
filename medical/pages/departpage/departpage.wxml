@@ -1,0 +1,24 @@
+<!--pages/departpage/departpage.wxml-->
+<view class='retrieval'>
+  <view class='leftbar'>
+    <text class='leftbartodolist' bindtap='kemu_selected' id='text1'>儿科</text>
+    <text class='leftbartodolist'>外科</text>
+    <text class='leftbartodolist'>内科</text>
+    <text class='leftbartodolist'>内科</text>
+  </view>
+
+  <view class='rightbar'>
+    <text class='rightbartodolist'>{{title1}}</text>
+    <text class='rightbartodolist'>{{title2}}</text>
+    <text class='rightbartodolist'>耳鼻喉科</text>
+    <text class='rightbartodolist'>内科</text>
+    <text class='rightbartodolist'>外科</text>
+    <text class='rightbartodolist'>内科</text>
+    <text class='rightbartodolist'>耳鼻喉科</text>
+    <text class='rightbartodolist'>外科</text>
+    <text class='rightbartodolist'>外科</text>
+    <text class='rightbartodolist'>内科</text>
+    <text class='rightbartodolist'>外科</text>
+    <text class='rightbartodolist'>内科</text>
+  </view>
+</view>

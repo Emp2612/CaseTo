@@ -17,7 +17,8 @@ Page({
     isfull: false,
     // citycode: '区域',
     // hosp_grade: '等级',
-    shownavindex: ''
+    shownavindex: '',
+    cityData:[]
   },
 
   /**
@@ -32,12 +33,22 @@ Page({
         'content-type': 'application/x-www-form-urlencoded'
       },
       success: function (res) {
-        console.log(res.data)
+        console.log('res.data',res.data)
         console.log(res.data[0].city_name)
         that.setData({
           cityCode: res.data,
           // city_name: res.data[0].city_name
-        })
+        });
+        var cityData = []; 
+        for (var i = 0; i < res.data.length;i++){
+          cityData.push(res.data[i].city_name)
+        }
+        that.setData({
+          cityData: cityData,
+          // city_name: res.data[0].city_name
+        });
+        
+        console.log('citycode', that.data.cityData)
       }
     })
     wx.request({

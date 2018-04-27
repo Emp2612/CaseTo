@@ -13,9 +13,12 @@
     </view>
   </view>
   <!-- 区域下拉框 -->
+  <!-- <view wx:for="{{cityCode}}" >
+  {{item.city_name}}
+</view> -->
   <view class="temp temp1 {{nzopen ? 'slidown' : 'slidup'}} {{nzshow ? 'disappear':''}}">
     <view class="slidownbottom">
-      <block wx:for="{{cityCode[city_name]}}" wx:key="unique">
+      <block wx:for="{{cityData}}" wx:key="city_id">
         <view class="sdbitem " bindtap='selectsdbitem'> {{index}}</view>
       </block>
     </view>

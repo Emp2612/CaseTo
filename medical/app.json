@@ -1,6 +1,8 @@
 {
   "pages":[
+    "pages/testlist/testlist",
     "pages/inquiry/inquiry",
+    "pages/departpage/departpage",
     "pages/order/order",
     "pages/homepage/homepage",
     "pages/mycenter/mycenter",
