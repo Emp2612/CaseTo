@@ -97,6 +97,7 @@
   border-bottom: 2rpx solid #ddd;
   justify-content: space-around;
   align-items: center;
+  padding-top: 130rpx;
   flex-wrap: wrap;
 }
 

@@ -18,14 +18,22 @@
   <view class="dialog-mask " style="visibility:{{isVisible ? 'visible': 'hidden'}}" bindtap="hideMenuTap"></view>
   <!-- 选择btn -->
   <view wx:if="{{menuType==1}} " class="state-menu " animation="{{animationData}}" style="visibility:{{isVisible ? 'visible': 'hidden'}}">
-    <view class="state-item {{status==1? 'border': ''}} " bindtap="selectState " data-status="1 ">{{cityName}}</view>
-    <view class="state-item {{status==2? 'border': ''}} " bindtap="selectState " data-status="2 ">{{cityName}}</view>
+     <view class='state-item'>
+      <block wx:for='{{cityName}}' wx:key="city_id">
+      <view bindtap='selectState' data-status="1 ">{{item.city_name}}</view>
+      </block>
+    </view> 
+    <!-- <block wx:for='{{city_name}}' wx:key="city_id"> -->
+     <!-- <view class="state-item {{status==1? 'border': ''}} " bindtap="selectState " data-status="1 ">{{city_name}}</view> -->
+      <!-- </block> -->
+    <!-- <view class="state-item {{status==2? 'border': ''}} " bindtap="selectState " data-status="2 ">{{cityName}}</view>
     <view class="state-item {{status==3? 'border': ''}} " bindtap="selectState " data-status="3 ">{{cityName}}</view>
     <view class="state-item {{status==4? 'border': ''}} " bindtap="selectState " data-status="4 ">{{cityName}}</view>
     <view class="state-item {{status==5? 'border': ''}} " bindtap="selectState " data-status="5 ">{{cityName}}</view>
     <view class="state-item {{status==6? 'border': ''}} " bindtap="selectState " data-status="6 ">{{cityName}}</view>
     <view class="state-item {{status==7? 'border': ''}} " bindtap="selectState " data-status="7 ">{{cityName}}</view>
     <view class="state-item {{status==8? 'border': ''}} " bindtap="selectState " data-status="8 ">{{cityName}}</view>
-    <view class="state-item {{status==8? 'border': ''}} " bindtap="selectState " data-status="9 ">{{cityName}}</view>
+    <view class="state-item {{status==8? 'border': ''}} " bindtap="selectState " data-status="9 ">{{cityName}}</view>  -->
   </view>
+   
 </view>

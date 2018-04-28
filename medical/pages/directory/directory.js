@@ -6,7 +6,7 @@ Page({
    */
   data: {
     cityName: [],
-    cityId:'',
+    cityId: '',
     menuType: 0,
     status: 1,
     isVisible: false,
@@ -36,21 +36,22 @@ Page({
       success: function (res) {
         console.log(res.data)
         // console.log(res.data[0].city_name)
-        console.log(res.data[0].city_id)
+        // console.log(res.data[0].city_id)
+        // that.setData({
+        //   cityId: res.data[0].city_id,
+          // cityName: res.data
+        // })
+     //  var cityName = [];
+        // for (var i = 0; i < res.data.length; i++) {
+        //   cityName.push(res.data[i].city_name)
+        // }
         that.setData({
-          cityId: res.data[0].city_id,
-          cityName: res.data[0].city_name
+          cityName: res.data,
         })
+        console.log('cityName', that.data.cityName)
       }
     })
-    // var cityName = [];
-    // for (var i = 0; i < this.data.length; i++) {
-    //   cityName.push(res.data[i].city_name)
-    // }
-    // that.setData({
-    //   cityName: cityName,
-    // })
-    // console.log('cityName', this.data.cityName)
+   
   },
   showMenuTap: function (e) {
     console.log('selectState')
