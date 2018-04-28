@@ -1,5 +1,6 @@
 {
   "pages":[
+    "pages/directory/directory",
     "pages/testlist/testlist",
     "pages/inquiry/inquiry",
     "pages/departpage/departpage",

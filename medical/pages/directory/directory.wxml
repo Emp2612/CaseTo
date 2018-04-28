@@ -1,0 +1,31 @@
+<!--pages/directory/directory.wxml-->
+<view class='page'>
+  <!-- Tabbtn -->
+  <view class='tabbtn' style='position: absolute;z-index: 10;'>
+    <!-- 区域 -->
+    <view class='lefttab' bindtap="showMenuTap" data-type="1">
+      <text class='tabbtn-item'>区域</text>
+      <image class='tabbtn-icon' src='../../images/arrowup.png'></image>
+    </view>
+    <!-- 等级 -->
+    <view class='righttab' bindtap="showMenuTap" data-type="2">
+      <text class='tabbtn-item'>等级</text>
+      <image class='tabbtn-icon' src='../../images/arrowup.png'></image>
+    </view>
+    <view class="line"></view>
+  </view>
+  <!-- 遮罩 -->
+  <view class="dialog-mask " style="visibility:{{isVisible ? 'visible': 'hidden'}}" bindtap="hideMenuTap"></view>
+  <!-- 选择btn -->
+  <view wx:if="{{menuType==1}} " class="state-menu " animation="{{animationData}}" style="visibility:{{isVisible ? 'visible': 'hidden'}}">
+    <view class="state-item {{status==1? 'border': ''}} " bindtap="selectState " data-status="1 ">{{cityName}}</view>
+    <view class="state-item {{status==2? 'border': ''}} " bindtap="selectState " data-status="2 ">{{cityName}}</view>
+    <view class="state-item {{status==3? 'border': ''}} " bindtap="selectState " data-status="3 ">{{cityName}}</view>
+    <view class="state-item {{status==4? 'border': ''}} " bindtap="selectState " data-status="4 ">{{cityName}}</view>
+    <view class="state-item {{status==5? 'border': ''}} " bindtap="selectState " data-status="5 ">{{cityName}}</view>
+    <view class="state-item {{status==6? 'border': ''}} " bindtap="selectState " data-status="6 ">{{cityName}}</view>
+    <view class="state-item {{status==7? 'border': ''}} " bindtap="selectState " data-status="7 ">{{cityName}}</view>
+    <view class="state-item {{status==8? 'border': ''}} " bindtap="selectState " data-status="8 ">{{cityName}}</view>
+    <view class="state-item {{status==8? 'border': ''}} " bindtap="selectState " data-status="9 ">{{cityName}}</view>
+  </view>
+</view>

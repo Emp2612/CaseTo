@@ -1,0 +1,132 @@
+/* pages/directory/directory.wxss */
+
+.page {
+  width: 100%;
+  padding: 0;
+}
+
+/* .top-menu {
+  display: flex;
+  position: fixed;
+  height: 80rpx;
+  z-index: 10;
+  background-color: #fff;
+  width: 100%;
+  top: 0;
+  left: 0;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 2rpx solid #ddd;
+  font-size: 11pt;
+  text-align: center;
+  color: #bdbdbd;
+}
+
+.line {
+  width: 2rpx;
+  height: 100%;
+  background-color: #ddd;
+} */
+
+/* 顶部选择栏 */
+
+.tabbtn {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.tabbtn-item {
+  display: flex;
+  font-size: 30rpx;
+  width: 100%;
+  height: 60rpx;
+  padding-top: 20rpx;
+  justify-content: center;
+  border-top: 1rpx solid #d1d3d4;
+  border-bottom: 1rpx solid #d1d3d4;
+}
+
+.tabbtn-icon {
+  position: absolute;
+  padding-top: 38rpx;
+  padding-left: 250rpx;
+  justify-content: center;
+  width: 24rpx;
+  height: 13rpx;
+}
+
+.lefttab {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 85rpx;
+  /* border-right: 1rpx solid #d1d3d4; */
+}
+
+.righttab {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 60rpx;
+}
+
+/* 按钮 */
+
+.state-item {
+  width: 30%;
+  height: 70rpx;
+  font-size: 10pt;
+  line-height: 70rpx;
+  text-align: center;
+  /* border-radius: 10rpx; */
+  border: 2rpx solid #ddd;
+}
+
+.state-menu {
+  display: flex;
+  position: fixed;
+  left: 0;
+  height: 350rpx;
+  top: 80rpx;
+  width: 100%;
+  z-index: 9;
+  background-color: #fff;
+  flex-direction: row;
+  border-bottom: 2rpx solid #ddd;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.border.state-item {
+  border: 2rpx solid #30c4a3;
+  color: #30c4a3;
+}
+
+/* 展开收起 */
+
+.hidden.state-menu {
+  transform: translateY(-500rpx);
+  transition: all 0.4s ease;
+  visibility: hidden;
+}
+
+.show.state-menu {
+  transform: translateY(0);
+  transition: all 0.4s ease;
+  visibility: visible;
+}
+
+/* 遮罩 */
+
+.dialog-mask {
+  position: fixed;
+  top: 70;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 8;
+  background: rgba(0, 0, 0, 0.3);
+}

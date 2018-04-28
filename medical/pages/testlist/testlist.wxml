@@ -1,2 +1,31 @@
 <!--pages/testlist/testlist.wxml-->
-<text>pages/testlist/testlist.wxml</text>
+<!-- <view wx:for="{{cityCode}}">
+  {{item.city_name}}
+</view> -->
+<view class='tabbtn'>
+  <view class='lefttab' bindtap='leftTabShow'>
+    <text class='tabbtn-item'>区域</text>
+    <image class='tabbtn-icon' src='../../images/arrowup.png'></image>
+  </view>
+  <view class='righttab'>
+    <text class='tabbtn-item'>等级</text>
+    <image class='tabbtn-icon' src='../../images/arrowup.png'></image>
+  </view>
+</view>
+<view class='option' hidden="{{flag}}" bindtap="optionHide">
+  <view class='list-item'>
+    <text class='option-item'>昆明市</text>
+    <text class='option-item'>曲靖市</text>
+    <text class='option-item'>红河州市</text>
+  </view>
+  <view class='list-item'>
+    <text class='option-item'>昆明市</text>
+    <text class='option-item'>曲靖市</text>
+    <text class='option-item'>红河州市</text>
+  </view>
+  <view class='list-item'>
+    <text class='option-item'>昆明市</text>
+    <text class='option-item'>曲靖市</text>
+    <text class='option-item'>红河州市</text>
+  </view>
+</view>
