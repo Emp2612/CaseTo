@@ -1,2 +1,40 @@
 <!--pages/physiclist/physiclist.wxml-->
-<text>pages/physiclist/physiclist.wxml</text>
+<view class="container">
+  <!--list-->
+  <view class="nav_section">
+    <view wx:if="{{list[curIndex]}}">
+      <block wx:for="{{list[curIndex]}}" wx:key="item.id">
+        <view class="nav_section_items">
+          <!--image-->
+          <view class="section_image" bindtap="navigateDetail" data-aid="{{item.id}}">
+            <block wx:if="{{item.coverpath}}">
+              <image src="{{item.coverpath}}" mode="aspectFill"></image>
+            </block>
+            <block wx:else>
+              <image src="../../images/9.png" mode="aspectFill"></image>
+            </block>
+          </view>
+          <!--content-->
+          <view class="section_cont" bindtap="navigateDetail" data-aid="{{item.id}}">
+            <view class="section_cont_sub">
+              <text>{{item.subject}}</text>  
+            <view class='section_cont_rank'>
+              <text>{{item.rank}}</text>
+              </view>
+            </view>
+            <view class="section_cont_quantity">预约量：{{item.quantity}}</view>
+            <view class="section_cont_quantity">好评度：{{item.evaluate}}</view>
+            <view style='margin-top:20rpx;'>擅长：{{item.message}}</view>
+          </view>
+          <!--book-->
+          <view class="section_book" bindtap="bookTap" data-aid="{{item.id}}">
+            <text>挂号</text>
+          </view>
+        </view>
+      </block>
+    </view>
+    <!-- <view wx:else>暂无数据</view> -->
+  </view>
+
+</view>
+

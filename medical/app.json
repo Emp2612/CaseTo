@@ -1,14 +1,14 @@
 {
   "pages":[
-    "pages/directory/directory",
-    "pages/testlist/testlist",
-    "pages/inquiry/inquiry",
     "pages/departpage/departpage",
+    "pages/directory/directory",
+    "pages/inquiry/inquiry",
+    "pages/testlist/testlist",
+    "pages/physiclist/physiclist",
     "pages/order/order",
     "pages/homepage/homepage",
     "pages/mycenter/mycenter",
     "pages/index/index",
-    "pages/physiclist/physiclist",
     "pages/aboutus/aboutus",
     "pages/addinfo/addinfo",
     "pages/addpeople/addpeople",

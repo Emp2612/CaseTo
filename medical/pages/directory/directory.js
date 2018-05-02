@@ -6,7 +6,7 @@ Page({
    */
   data: {
     cityName: [],
-    cityId: '',
+    hospGrade: [],
     menuType: 0,
     status: 1,
     isVisible: false,
@@ -28,6 +28,19 @@ Page({
     this.animation = animation;
     var that = this
     wx.request({
+      url: 'https://cs.kmmyxb.cn/api', 
+      data: '',
+      header: {
+        'content-type': 'application/x-www-form-urlencoded'
+      },
+      success: res => {
+        this.setData({
+          navSectionItems: res.data
+        });
+        console.log(this.data.navSectionItems)
+      }
+    })
+    wx.request({
       url: 'https://cs.kmmyxb.cn/api/hosp.php?action=citycode',
       data: '',
       header: {
@@ -35,41 +48,43 @@ Page({
       },
       success: function (res) {
         console.log(res.data)
-        // console.log(res.data[0].city_name)
-        // console.log(res.data[0].city_id)
-        // that.setData({
-        //   cityId: res.data[0].city_id,
-          // cityName: res.data
-        // })
-     //  var cityName = [];
-        // for (var i = 0; i < res.data.length; i++) {
-        //   cityName.push(res.data[i].city_name)
-        // }
         that.setData({
           cityName: res.data,
         })
         console.log('cityName', that.data.cityName)
       }
     })
-   
+    wx.request({
+      url: 'https://cs.kmmyxb.cn/api/hosp.php?action=hosp_grade',
+      data: '',
+      header: {
+        'content-type': 'application/x-www-form-urlencoded'
+      },
+      success: function (res) {
+        console.log("hospGrade", res.data)
+        that.setData({
+          hospGrade: res.data,
+        })
+        console.log('hospGrade', that.data.hospGrade)
+      }
+    })
   },
+  // 区域点击；
   showMenuTap: function (e) {
     console.log('selectState')
     //获取点击菜单的类型 1点击区域 2点击等级 
-    var menuType = e.currentTarget.dataset.type
+    var menuType = e.currentTarget.dataset.type;
+    this.setData({
+      menuType: menuType,
+    })
+    // console.log(menuType)
     // 如果当前已经显示，再次点击时隐藏
     if (this.data.isVisible == true) {
       this.startAnimation(false, -400)
       return
     }
-    this.setData({
-      menuType: menuType,
-    })
-    console.log(e.currentTarget.dataset)
+    console.log("menuType", this.data.menuType)
     this.startAnimation(true, 0)
-  },
-  hideMenuTap: function (e) {
-    this.startAnimation(false, -400)
   },
   // 执行动画
   startAnimation: function (isShow, offset) {
@@ -85,7 +100,7 @@ Page({
       animationData: this.animation.export(),
       isVisible: isShow
     })
-    console.log(that.data)
+    console.log(this.data)
   },
   // 选择状态按钮
   selectState: function (e) {
@@ -95,8 +110,12 @@ Page({
     this.setData({
       status: status
     })
-    console.log(that.data)
-
+    console.log(this.data)
+  },
+  navigateDetail: function (e) {
+    wx.navigateTo({
+      url: '../physiclist/physiclist?artype=' + e.currentTarget.dataset.artype
+    })
   },
   /**
    * 生命周期函数--监听页面初次渲染完成

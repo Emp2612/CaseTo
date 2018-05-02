@@ -46,20 +46,9 @@ Page({
         'content-type': 'application/x-www-form-urlencoded' // 默认值
       },
       success: res => {
-        // console.log(res)
-        // console.log(typeof res)
-        // console.log(res.data[0])
-        // console.log(that)
-        // this.setData({
-        //   navSectionItems: res.data
-        // })
-        
         this.setData({
           navSectionItems: res.data
         });
-
-      //  this.navSectionItems = res.data;
-
         console.log(this.data.navSectionItems)
       }
     })

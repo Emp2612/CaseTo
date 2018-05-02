@@ -17,23 +17,54 @@
   <!-- 遮罩 -->
   <view class="dialog-mask " style="visibility:{{isVisible ? 'visible': 'hidden'}}" bindtap="hideMenuTap"></view>
   <!-- 选择btn -->
-  <view wx:if="{{menuType==1}} " class="state-menu " animation="{{animationData}}" style="visibility:{{isVisible ? 'visible': 'hidden'}}">
-     <view class='state-item'>
-      <block wx:for='{{cityName}}' wx:key="city_id">
-      <view bindtap='selectState' data-status="1 ">{{item.city_name}}</view>
+  <block wx:if="{{menuType==1}}">
+    <view class="state-menu " animation="{{animationData}}" style="visibility:{{isVisible ? 'visible': 'hidden'}}">
+      <view class="state-menu ">
+        <block wx:for='{{cityName}}' wx:key="city_id">
+          <view class="state-item" bindtap='selectState' data-status="1">{{item.city_name}}</view>
+        </block>
+      </view>
+    </view>
+  </block>
+  <block wx:else>
+    <view class="state-menu " animation="{{animationData}}" style="visibility:{{isVisible ? 'visible': 'hidden'}}">
+      <view class="state-menu">
+        <block wx:for='{{hospGrade}}' wx:key="hosp_grade">
+          <view class="state-item" bindtap='selectState' data-status="1">{{item.grade}}</view>
+        </block>
+      </view>
+    </view>
+  </block>
+  <view class="nav_section">
+    <view wx:if="{{navSectionItems}}">
+      <block wx:for="{{navSectionItems}}" wx:key="item.id">
+        <view class="nav_section_items">
+          <!--image-->
+          <view class="section_image" bindtap="navigateDetail" data-aid="{{item.id}}">
+            <block wx:if="{{item.hosp_logo}}">
+              <image src="{{item.hosp_logo}}" mode="aspectFill"></image>
+            </block>
+            <block wx:else>
+              <image src="../../images/default_pic.png" mode="aspectFill"></image>
+            </block>
+          </view>
+          <!--content-->
+          <view class="section_cont" bindtap="navigateDetail" data-aid="{{item.id}}">
+            <view class="section_cont_sub">
+              <text>{{item.hosp_name}}</text>
+            </view>
+            <view id='yyx' style="flex-direction:row; display: flex;">
+              <view class="section_cont_scale">{{item.grade}}</view>
+              <view class="section_cont_price">预约量：{{item.orders}}</view>
+            </view>
+            <view>
+              <image src='../../images/addr.png' class='section_cont_icon'></image>
+              <text>{{item.hosp_addr}}</text>
+            </view>
+          </view>
+        </view>
       </block>
-    </view> 
-    <!-- <block wx:for='{{city_name}}' wx:key="city_id"> -->
-     <!-- <view class="state-item {{status==1? 'border': ''}} " bindtap="selectState " data-status="1 ">{{city_name}}</view> -->
-      <!-- </block> -->
-    <!-- <view class="state-item {{status==2? 'border': ''}} " bindtap="selectState " data-status="2 ">{{cityName}}</view>
-    <view class="state-item {{status==3? 'border': ''}} " bindtap="selectState " data-status="3 ">{{cityName}}</view>
-    <view class="state-item {{status==4? 'border': ''}} " bindtap="selectState " data-status="4 ">{{cityName}}</view>
-    <view class="state-item {{status==5? 'border': ''}} " bindtap="selectState " data-status="5 ">{{cityName}}</view>
-    <view class="state-item {{status==6? 'border': ''}} " bindtap="selectState " data-status="6 ">{{cityName}}</view>
-    <view class="state-item {{status==7? 'border': ''}} " bindtap="selectState " data-status="7 ">{{cityName}}</view>
-    <view class="state-item {{status==8? 'border': ''}} " bindtap="selectState " data-status="8 ">{{cityName}}</view>
-    <view class="state-item {{status==8? 'border': ''}} " bindtap="selectState " data-status="9 ">{{cityName}}</view>  -->
+    </view>
   </view>
-   
+  
 </view>
