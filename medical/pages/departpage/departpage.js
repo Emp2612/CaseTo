@@ -1,16 +1,22 @@
 // pages/departpage/departpage.js
+/**2018-05-03
+  * @case..
+  *医院两级联动
+  * 
+  */
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    title1: 123,
-    title2: 456,
-    catePidName: [],
-    cateTitle: [],
-    cateTitleItem: [],
-    index: 0
+    catePidName: [],//科室主类
+    cateTitle: [],//科室子类
+    cateTitleItem: [],//科室主类项
+    index: 0,//判断点击ID
+    pageBackgroundColor: '#fff',
+    clickId: 0,//判断颜色点击ID
+    rightclickId: 0,//判断颜色点击ID
   },
   /**
    * 生命周期函数--监听页面加载
@@ -18,19 +24,20 @@ Page({
   onLoad: function (options) {
     var that = this
     wx.request({
-      url: 'https://cs.kmmyxb.cn/api/hosp.php?action=hosp_attr&hosp_id=1',
+      url: 'https://cs.kmmyxb.cn/api/hosp.php?action=hosp_attr&hosp_id=1',//科室接口请求
       header: {
         'content-type': "application/x-www-form-urlencoded"
       },
       success: function (res) {
         console.log(res)
         that.setData({
-          catePidName: res.data,
+          catePidName: res.data,//参数赋值
           // cateTitle: res.data[0].sub[0].cate_title
         });
         // console.log(res.data)
         // console.log(res.data[0])
         // console.log("cateTitle", res.data[0].sub[0].cate_title)
+        // 右侧科室细类封装
         var cateTitle = []
         for (var i = 0; i < res.data.length; i++) {
           cateTitle.push(res.data[i].sub)
@@ -42,24 +49,22 @@ Page({
       }
     })
   },
+  //左侧点击事件
   catepidSelected: function (event) {
-    // if (event.currentTarget.id == 0) {
-    //   console.log(this.data.cateTitleItem),
-    //     this.setData({
-    //       cateTitle: this.data.cateTitleItem[0],
-    //     });
-    // } else if (event.currentTarget.id == 1) {
-    //   console.log('cateTitleItem')
-
-    // }
     this.setData({
+      clickId: event.currentTarget.id, // 设置背景颜色数据
       cateTitle: this.data.cateTitleItem[event.currentTarget.id],
     });
     console.log("cateTitle", this.data.cateTitle)
   },
+  //左侧点击事件
   cateSelected: function (event) {
     console.log(event)
     console.log(event.currentTarget.dataset.a)
+    this.setData({
+      rightclickId: event.currentTarget.id,// 设置背景颜色数据
+    })
+    //带参数跳转相应科室医生页面
     wx.navigateTo({
       url: '../physiclist/physiclist?a=' + event.currentTarget.dataset.a,
     })

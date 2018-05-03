@@ -18,7 +18,7 @@
   <view class="dialog-mask " style="visibility:{{isVisible ? 'visible': 'hidden'}}" bindtap="hideMenuTap"></view>
   <!-- 选择btn -->
   <block wx:if="{{menuType==1}}">
-    <view class="state-menu " animation="{{animationData}}" style="visibility:{{isVisible ? 'visible': 'hidden'}}">
+    <view class="state-menu" animation="{{animationData}}" style="visibility:{{isVisible ? 'visible': 'hidden'}}">
       <view class="state-menu ">
         <block wx:for='{{cityName}}' wx:key="city_id">
           <view class="state-item" bindtap='selectState' data-status="1">{{item.city_name}}</view>
@@ -66,5 +66,5 @@
       </block>
     </view>
   </view>
-  
+
 </view>

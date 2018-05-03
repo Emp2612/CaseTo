@@ -4,12 +4,32 @@
   <view class='retrieval'>
     <view class='leftbar'>
       <view wx:for="{{catePidName}}" wx:key="">
-        <view class='leftbartodolist' bindtap='catepidSelected' id="{{index}}">{{item.cate_pid_name}}</view>
+        <view id="{{index}}" bindtap='catepidSelected'>
+          <block wx:if="{{index==clickId}}">
+            <view class='leftbarbtn'></view>
+            <image class='leftbarimg' src='../../images/arrowright.png'></image>
+            <view class='leftbartodolist' style='background:#ebebeb;color:#196db6;'>{{item.cate_pid_name}}</view>
+          </block>
+          <block wx:else>
+            <view class='leftbartodolist'>{{item.cate_pid_name}}</view>
+          </block>
+        </view>
+        <!-- <image class='leftbarimg' src='../../images/arrowright.png'></image> -->
+        <!-- <view class='leftbartodolist' bindtap='catepidSelected' id="{{index}}">{{item.cate_pid_name}}</view> -->
       </view>
+
     </view>
     <view class='rightbar'>
       <view wx:for="{{cateTitle}}" wx:key="">
-        <view class='rightbartodolist' bindtap='cateSelected' data-a='{{item.cate_title}}'>{{item.cate_title}}</view>
+        <view id="{{index}}" bindtap='cateSelected'>
+          <block wx:if="{{index==rightclickId}}">
+            <view class='rightbartodolist' style='color:#196db6;'>{{item.cate_title}}</view>
+          </block>
+          <block wx:else>
+            <view class='rightbartodolist'>{{item.cate_title}}</view>
+          </block>
+        </view>
+        <!-- <view class='rightbartodolist' style='color:#196db6;' bindtap='cateSelected' data-a='{{item.cate_title}}'>{{item.cate_title}}</view> -->
       </view>
     </view>
   </view>
