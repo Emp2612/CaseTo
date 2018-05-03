@@ -1,1 +1,110 @@
 /* pages/addinfo/addinfo.wxss */
+
+.page {
+  width: 100%;
+}
+
+/* 顶部提示栏 */
+
+.hintbar {
+  width: 100%;
+  height: 50rpx;
+  padding-top: 10rpx;
+  font-size: 30rpx;
+  color: #fff;
+  text-align: center;
+  background-color: #30c4a2;
+}
+
+/* 表单信息 */
+
+.forms {
+  width: 100%;
+  padding: 30rpx;
+}
+
+.forms-name {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: 33rpx;
+  font-weight: bold;
+  padding-left: 60rpx;
+}
+
+.forms-name-input {
+  width: 450rpx;
+  height: 70rpx;
+  font-weight: normal;
+  padding-left: 30rpx;
+  border: 2rpx solid #ccc;
+  border-radius: 20rpx;
+}
+
+.forms-texts {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: 33rpx;
+  font-weight: bold;
+  padding-left: 4rpx;
+}
+
+.lable {
+  font-size: 30rpx;
+  color: #ccc;
+  align-items: center;
+  font-weight: normal;
+}
+
+/*  重写 radio 样式  */
+
+.forms-radio-ss {
+  display: flex;
+  flex-direction: row;
+  padding-top: 30rpx;
+  align-items: center;
+}
+
+.forms-radio-ss.radio {
+  border-radius: 50%;
+  width: 40rpx;
+  height: 40rpx;
+}
+
+.forms-radio-ss.radio.radio-checked {
+  border: none;
+  background: red;
+}
+
+.forms-radio-ss.radio.radio-checked::before {
+  border-radius: 50%;
+  width: 40rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+  text-align: center;
+  font-size: 30rpx;
+  color: #fff;
+  background: transparent;
+  transform: translate(-80%, -80%) scale(1);
+  -webkit-transform: translate(-80%, -80%) scale(1);
+}
+
+.sbmbtn {
+  overflow: hidden;
+  margin-top: 80rpx;
+  align-items: center;
+  width: 400rpx;
+  padding-left: 150rpx;
+}
+
+/* 警告提示 */
+
+.warnhint {
+  font-size: 25rpx;
+  font-weight: bold;
+  color: #f00;
+  text-align: center;
+  height: 100rpx;
+  padding-top: 30rpx;
+}

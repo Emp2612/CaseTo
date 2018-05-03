@@ -1,1 +1,488 @@
 /* pages/detail/detail.wxss */
+.page {
+  width: 650rpx;
+}
+
+.personinfo {
+  /* display: flex;
+  flex-direction: column;  */
+  padding-top: 30rpx;
+}
+
+.personinfo-text {
+  margin-left: 220rpx;
+  font-size: 40rpx;
+  font-weight: bold;
+  text-align: center;
+  position: absolute;
+}
+
+.personinfo-unit {
+  margin-left: 250rpx;
+  padding-top: 8rpx;
+  font-size: 32rpx;
+  /* font-weight: bolder; */
+  color: #808080;
+}
+
+.personinfo-rank {
+  margin-left: 111rpx;
+  width: 100%;
+  padding-top: 50rpx;
+  font-size: 32rpx;
+  /* font-weight: bolder; */
+  position: absolute;
+  color: #808080;
+}
+
+.personinfo-img {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+  margin-left: 30rpx;
+}
+
+.personinfo-img-src {
+  width: 80px;
+  height: 100px;
+}
+
+.personinfo-icon {
+  position: absolute;
+  margin-left: 120rpx;
+  padding-top: 90rpx;
+  width: 100%;
+  font-size: 32rpx;
+  color: #606060;
+}
+
+.personinfo-icon-src {
+  width: 38rpx;
+  height: 38rpx;
+  position: absolute;
+  margin-left: 75rpx;
+  padding-top: 93rpx;
+}
+
+.personinfo-icon-subs {
+  position: absolute;
+  margin-left: 293rpx;
+  padding-top: 90rpx;
+}
+
+.personinfo-icon-src1 {
+  width: 38rpx;
+  height: 38rpx;
+  position: absolute;
+  margin-left: 250rpx;
+  padding-top: 93rpx;
+}
+
+.personinfo-icon-cons {
+  position: absolute;
+  margin-left: 463rpx;
+  padding-top: 90rpx;
+}
+
+.personinfo-icon-src2 {
+  width: 38rpx;
+  height: 38rpx;
+  position: absolute;
+  margin-left: 420rpx;
+  padding-top: 93rpx;
+}
+
+.splitbar {
+  display: flex;
+  flex-direction: row;
+  margin-left: 30rpx;
+  margin-top: 30rpx;
+}
+
+.splitbar-img {
+  position: absolute;
+  width: 730rpx;
+  height: 53rpx;
+}
+
+.splitbar-text {
+  position: absolute;
+  font-size: 33rpx;
+  color: #fff;
+  margin-left: 5rpx;
+  margin-top: 5rpx;
+}
+
+.introduce {
+  margin-left: 30rpx;
+  margin-right: 30rpx;
+  margin-top: 60rpx;
+}
+
+.introduce-title {
+  font-weight: bold;
+  font-size: 32rpx;
+  color: #606060;
+}
+
+.introduce-text {
+  font-size: 28rpx;
+  padding-left: 50rpx;
+  color: #696969;
+}
+
+.introduce-line {
+  margin-top: 30rpx;
+  margin: center;
+  width: 100%;
+  height: 2rpx;
+  background: lightgray;
+}
+
+/* 注意小字 */
+
+.Comments {
+  margin-top: 60rpx;
+  margin-left: 30rpx;
+  font-size: 20rpx;
+  color: #a9a9a9;
+}
+
+/* 医院表单 */
+
+.forms {
+  width: 100%;
+  padding-top: 20rpx;
+}
+
+.forms-name {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: 33rpx;
+  font-weight: bold;
+  padding-left: 80rpx;
+  padding-top: 30rpx;
+}
+
+.forms-name-input {
+  width: 450rpx;
+  height: 70rpx;
+  font-weight: normal;
+  padding-left: 30rpx;
+  border: 2rpx solid #ccc;
+  border-radius: 20rpx;
+}
+
+.forms-texts {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: 33rpx;
+  font-weight: bold;
+  padding-left: 4rpx;
+}
+
+/* 信息选择 */
+
+.item {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin-top: 50rpx;
+}
+
+.item-title {
+  font-size: 33rpx;
+  font-weight: bold;
+  color: #000;
+}
+
+.item-btn {
+  border-style: solid;
+  border-width: 1rpx;
+  height: 80rpx;
+  width: 130rpx;
+  margin-left: 5rpx;
+  /* float: left; */
+  padding-top: 5px;
+}
+
+.item-btn-ss {
+  display: flex;
+  flex-direction: row;
+  padding-top: 30rpx;
+  padding-left: 32rpx;
+  align-items: center;
+}
+
+.item-btn-time {
+  line-height: 18rpx;
+  font-size: 20rpx;
+  /* width: 100%; */
+  height: 20px;
+  text-align: left;
+  padding-top: 8rpx;
+  padding-left: 12rpx;
+  float: left;
+}
+
+.statemodel {
+  display: flex;
+  flex-direction: row;
+}
+
+.triangle {
+  width: 0;
+  height: 0;
+  border-width: 30rpx;
+  border-style: solid;
+  border-color: transparent transparent #3cf transparent;
+}
+
+.triangle-position {
+  padding-left: 40rpx;
+}
+
+/* 预约日期选择模块 */
+
+.spanpage {
+  width: 88%;
+  height: 250rpx;
+  border: 1px solid #3cf;
+  border-radius: 25rpx;
+  background-color: #3cf;
+  margin-top: 20rpx;
+  margin-left: 45rpx;
+  align-items: center;
+  margin-bottom: 10rpx;
+}
+
+.spanpage-title {
+  width: 300rpx;
+  font-size: 30rpx;
+  color: #000;
+}
+
+.spanpage-title-ss {
+  width: 60%;
+  display: flex;
+  flex-direction: row;
+  padding-top: 20rpx;
+  margin-left: 130rpx;
+}
+
+.spanpage-line {
+  margin-top: 20rpx;
+  margin-left: 15rpx;
+  width: 95%;
+  height: 2rpx;
+  background: #fff;
+}
+
+.spanpage-radio {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 30rpx;
+  margin-left: 30rpx;
+  margin-right: 30rpx;
+  font-size: 30rpx;
+  color: #000;
+}
+
+.spanpage-btn {
+  margin-top: 25rpx;
+  margin-left: 260rpx;
+  text-align: center;
+  width: 120rpx;
+  height: 60rpx;
+  background-color: #30c4a2;
+  border: 1px solid #3cf;
+  border-radius: 10rpx;
+}
+
+.spanpage-btn-text {
+  font-size: 30rpx;
+  align-items: center;
+  color: #fff;
+}
+.bookinginfo {
+  width: 100%;
+}
+
+.bookinginfo-title {
+  font-size: 32rpx;
+  font-weight: bold;
+  margin-left: 30rpx;
+  margin-top: 30rpx;
+}
+
+.bookinginfo-line {
+  margin-top: 10rpx;
+  width: 95%;
+  height: 2rpx;
+  background: #ccc;
+  margin-bottom: 40rpx;
+}
+
+.bookinginfo-massage {
+  display: flex;
+  flex-direction: column;
+  font-size: 30rpx;
+  font-weight: normal;
+  margin-left: 180rpx;
+  margin-bottom: 20rpx;
+}
+
+.bookinginfo-massage-ss {
+  padding-top: 30rpx;
+}
+
+/* 就诊表单 */
+
+.bookingforms-ss {
+  display: flex;
+  flex-direction: column;
+  font-size: 30rpx;
+}
+
+.bookingforms {
+  width: 100%;
+  /* padding-top: 20rpx; */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.bookingforms-name {
+  font-size: 33rpx;
+  font-weight: bold;
+  /* padding-top: 30rpx; */
+}
+
+.bookingforms-name-input {
+  width: 350rpx;
+  height: 60rpx;
+  font-weight: normal;
+  padding-left: 15rpx;
+  border: 2rpx solid #ccc;
+  border-radius: 20rpx;
+}
+
+.bookingforms-texts {
+  font-size: 30rpx;
+  font-weight: bold;
+  padding-left: 2rpx;
+}
+
+/* 挂号提交btn */
+
+.bookingforms-btn {
+  padding-top: 15rpx;
+  padding-bottom: 15rpx;
+  margin-top: 40rpx;
+  margin-left: 250rpx;
+  text-align: center;
+  width: 250rpx;
+  height: 50rpx;
+  background-color: #30c4a2;
+  border: 1px solid #3cf;
+  border-radius: 20rpx;
+}
+
+.bookingforms-btn-text {
+  font-size: 35rpx;
+  color: #fff;
+}
+/* 同科室推荐list */
+.nav_section {
+  width: 100%;
+}
+
+.nav_section_items {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 30rpx;
+  border-bottom: 2rpx solid #ddd;
+  position: relative;
+}
+
+.nav_section_items:active {
+  background: #ddd;
+}
+
+.nav_section_items .section_image {
+  width: 150rpx;
+  height: 201rpx;
+}
+
+.nav_section_items .section_image image {
+  width: 100%;
+  height: 100%;
+  margin-top: 10rpx;
+}
+
+.nav_section_items .section_cont {
+  width: 400rpx;
+  font-size: 28rpx;
+  color: #505050;
+}
+
+.nav_section_items .section_cont_view {
+  display: flex;
+  flex-direction: row;
+  text-align-last:justify;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  /* display: block; */
+}
+
+.nav_section_items .section_cont .section_cont_intro {
+  white-space: normal;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.nav_section_items .section_cont .section_cont_sub {
+  font-size: 35rpx;
+  font-family: Microsoft YaHei;
+  display: flex;
+  flex-direction: row;
+  font-weight: 500;
+  line-height: 60rpx;
+  color: #000;
+  margin-bottom: 10rpx;
+}
+
+.nav_section_items .section_cont .section_cont_quantity {
+  font-size: 28rpx;
+  margin-top: 30rpx;
+  color: #3399ff;
+}
+
+.nav_section_items .section_cont .section_cont_rank {
+  font-weight: 400;
+  font-size: 28rpx;
+  color: #505050;
+  display: flex;
+  flex-direction: row;
+  margin-left: 30rpx;
+}
+
+.nav_section_items .section_book {
+  width: 90rpx;
+  height: 90rpx;
+  font-size: 26rpx;
+  border-radius: 100%;
+  background: #186db3;
+  line-height: 90rpx;
+  color: #fff;
+  text-align:center;
+  margin-top: 50rpx;
+}

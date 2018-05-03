@@ -1,1 +1,66 @@
 /* pages/aboutus/aboutus.wxss */
+.page {
+  width: 100%;
+}
+
+/* 标题 */
+
+.title {
+  font-size: 38rpx;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 40rpx;
+}
+
+.qrcode {
+  margin-left: 220rpx;
+  padding: 30rpx 20rpx 10rpx 20rpx;
+}
+
+/* 二维码 */
+
+.qrcode image {
+  width: 265rpx;
+  height: 265rpx;
+}
+
+/* 扫码关注 */
+
+.title1 {
+  font-size: 33rpx;
+  text-align: center;
+  margin-top: 20rpx;
+}
+
+/* 便民惠民，预约有限 */
+
+.title1_footer {
+  color: #686868;
+  font-size: 30rpx;
+  text-align: center;
+  margin-top: 10rpx;
+  border-bottom: 2rpx solid #ddd;
+  line-height: 60rpx;
+}
+
+/* 信息词条 */
+
+.massage {
+  display: flex;
+  direction:row;
+  justify-content: space-between;
+  border-bottom: 2rpx solid #ddd;
+  line-height: 100rpx;
+}
+
+.massage_title {
+  margin-left: 30rpx;
+  font-size: 35rpx;
+  color: #000;
+}
+
+.massage_title_num {
+  margin-right: 30rpx;
+  font-size: 35rpx;
+  color: #686868;
+}

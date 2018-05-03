@@ -29,7 +29,26 @@ Page({
       }
     })
   },
-
+  appointItem:function(){
+    wx.navigateTo({
+      url: '../appointbook/appointbook',
+    })
+  },
+  archivesItem:function(){
+    wx.navigateTo({
+      url: '../addpeople/addpeople',
+    })
+  },
+  serviceItem:function(){
+    wx.makePhoneCall({
+      phoneNumber: '18687066399' //仅为示例，并非真实的电话号码
+    })
+  },
+  aboutusItem:function(){
+    wx.navigateTo({
+      url: '../aboutus/aboutus',
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

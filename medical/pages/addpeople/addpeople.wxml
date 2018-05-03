@@ -1,2 +1,33 @@
 <!--pages/addpeople/addpeople.wxml-->
-<text>pages/addpeople/addpeople.wxml</text>
+<view class='page'>
+  <!-- 新增就诊人-->
+  <view class='title' bindtap='addInfoItem'>
+    <image class='title-icon' src='../../images/addpeople.png' style='width: 31rpx;height: 34rpx;margin-right: 10rpx;'></image>
+    <text>新增就诊人</text>
+    <text class='title-notes'>（已有就诊人数3位）</text>
+  </view>
+  <view class='line'></view>
+  <!-- 就诊家庭成员信息 -->
+  <block wx:if='{{flag}}'>
+    <view class='masinfo'>
+      <view wx:for='{{patientMassg}}' wx:key=''>
+        <image class='infoimg' src='../../images/farther.png' mode='aspectFill' style='width: 125rpx;height: 176rpx'></image>
+        <text class='infotitle'>{{item.name}}</text>
+        <text class='infosex' wx:if='{{item.sex==1}}'>男</text>
+        <text class='infosex' wx:elif='{{item.sex==2}}'>女</text>
+        <text class='infosex' style='padding-left:470rpx;'>{{item.age}}岁</text>
+        <text class='infosex' style='padding-top:60rpx;padding-left: 220rpx;'>{{item.mobile}}</text>
+        <text class='infosex' style='padding-top:100rpx;padding-left: 220rpx;'>{{item.id_number}}</text>
+        <text class='infosex' style='padding-top:150rpx;padding-left: 205rpx;'>（注：2018-05-10在昆明市第一人民医院就诊）</text>
+        <view class='line' style='padding-top:220rpx'></view>
+      </view>
+    </view>
+  </block>
+  <!-- 提示信息 -->
+  <block wx:elif='!{{flag}}'>
+  <view class='emptyhint'>
+    <text>温馨提示：</text>
+    <text style='padding-top: 10rpx;'>您还没有家庭成员就诊记录</text>
+  </view>
+  </block>
+</view>

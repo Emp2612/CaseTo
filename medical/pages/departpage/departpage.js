@@ -52,7 +52,7 @@ Page({
   //左侧点击事件
   catepidSelected: function (event) {
     this.setData({
-      clickId: event.currentTarget.id, // 设置背景颜色数据
+      clickId: event.target.id, // 设置背景颜色数据
       cateTitle: this.data.cateTitleItem[event.currentTarget.id],
     });
     console.log("cateTitle", this.data.cateTitle)
@@ -60,13 +60,13 @@ Page({
   //左侧点击事件
   cateSelected: function (event) {
     console.log(event)
-    console.log(event.currentTarget.dataset.a)
+    console.log(event.target.dataset.a)
     this.setData({
-      rightclickId: event.currentTarget.id,// 设置背景颜色数据
+      rightclickId: event.target.id,// 设置背景颜色数据
     })
     //带参数跳转相应科室医生页面
     wx.navigateTo({
-      url: '../physiclist/physiclist?a=' + event.currentTarget.dataset.a,
+      url: '../physiclist/physiclist?a=' + event.target.dataset.a,
     })
   },
   /**

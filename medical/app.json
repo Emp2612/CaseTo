@@ -1,25 +1,26 @@
 {
-  "pages":[
+  "pages": [
+    "pages/addinfo/addinfo",
+    "pages/addpeople/addpeople",
+    "pages/mycenter/mycenter",
+    "pages/detail/detail",
     "pages/departpage/departpage",
+    "pages/physiclist/physiclist",
+    "pages/homepage/homepage",
     "pages/directory/directory",
     "pages/inquiry/inquiry",
     "pages/testlist/testlist",
-    "pages/physiclist/physiclist",
     "pages/order/order",
-    "pages/homepage/homepage",
-    "pages/mycenter/mycenter",
     "pages/index/index",
     "pages/aboutus/aboutus",
-    "pages/addinfo/addinfo",
-    "pages/addpeople/addpeople",
-    "pages/detail/detail",
     "pages/accordion/accordion",
+    "pages/appointbook/appointbook",
     "pages/logs/logs"
   ],
-  "window":{
-    "backgroundTextStyle":"light",
+  "window": {
+    "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#196db6",
     "navigationBarTitleText": "云南就医预约平台",
-    "navigationBarTextStyle":"light"
+    "navigationBarTextStyle": "light"
   }
 }

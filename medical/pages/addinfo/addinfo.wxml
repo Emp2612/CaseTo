@@ -1,2 +1,48 @@
 <!--pages/addinfo/addinfo.wxml-->
-<text>pages/addinfo/addinfo.wxml</text>
+<scroll-view class='page'>
+  <view class='hintbar'>编辑就诊人信息</view>
+  <form bindsubmit="formSubmit" bindreset="formReset">
+    <view class='forms'>
+      <view class='forms-name'>姓 名：
+        <input name='name' class='forms-name-input' type='text' confirm-type='next' placeholder="请输入真实就诊姓名"></input>
+      </view>
+      <view class='forms-radio-ss'>
+        <radio-group class='forms-radio-ss' name='sex'>
+          <view class="forms-name">性 别：
+            <label class='lable'>
+              <radio value="男" checked/>男</label>
+            <label class='lable' style='padding-left:120rpx;'>
+              <radio value="女" />女</label>
+          </view>
+        </radio-group>
+      </view>
+      <view class='forms-texts'>
+        <view class='forms-radio-ss'>
+          <radio-group class='forms-radio-ss' name='documents'>
+            <view class="forms-texts">证件类型：
+              <label class='lable'>
+                <radio value="身份证" checked/>身份证</label>
+              <label class='lable' style='padding-left:60rpx;'>
+                <radio value="出生证" />出生证</label>
+            </view>
+          </radio-group>
+        </view>
+      </view>
+      <view class='forms-name' style='margin-top: 100rpx;'>年 龄：
+        <input name='age' class='forms-name-input' type="number" confirm-type='next' placeholder="请输入真实年龄（整数）"></input>
+      </view>
+      <view class='forms-texts' style='margin-top: 50rpx;'>手机号码：
+        <input name='phone' class='forms-name-input' type="number" confirm-type='next' placeholder="用于接收就诊信息"></input>
+      </view>
+      <view class='forms-texts' style='margin-top: 50rpx;'>证件号码：
+        <input name='IDcard' class='forms-name-input' type="idcard" confirm-type='done' placeholder="请输入证件号码"></input>
+      </view>
+    </view>
+    <view class='sbmbtn' style="letter-spacing: 18rpx;">
+      <button style="background-color: #30c4a2;border-radius: 25rpx;color:#fff;font-family: Microsoft YaHei ;" type='sbmbtn' formType='submit'>保存</button>
+    </view>
+  </form>
+  <view class='warnhint' wx:if="{{isSubmit}}">
+    {{warn ? warn : "姓名："+name+"，性别："+sex+"，证件类型："+documents+"，年龄："+age+"，手机号码："+phone+"，证件号码："+IDcard}}
+  </view>
+</scroll-view>

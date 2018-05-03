@@ -23,10 +23,10 @@
       <view wx:for="{{cateTitle}}" wx:key="">
         <view id="{{index}}" bindtap='cateSelected'>
           <block wx:if="{{index==rightclickId}}">
-            <view class='rightbartodolist' style='color:#196db6;'>{{item.cate_title}}</view>
+            <view class='rightbartodolist' style='color:#196db6;' data-a='{{item.cate_id}}'>{{item.cate_title}}</view>
           </block>
           <block wx:else>
-            <view class='rightbartodolist'>{{item.cate_title}}</view>
+            <view class='rightbartodolist' data-a='{{item.cate_id}}'>{{item.cate_title}}</view>
           </block>
         </view>
         <!-- <view class='rightbartodolist' style='color:#196db6;' bindtap='cateSelected' data-a='{{item.cate_title}}'>{{item.cate_title}}</view> -->
