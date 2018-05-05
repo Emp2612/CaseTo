@@ -1,4 +1,19 @@
 /* pages/appointbook/appointbook.wxss */
-.page{
+
+.page {
   width: 100%;
+}
+
+.swiper-tab {
+  width: 100%;
+  border-bottom: 2rpx solid #ccc;
+  text-align: center;
+  line-height: 80rpx;
+}
+
+.swiper-tab-list {
+  font-size: 30rpx;
+  display: inline-block;
+  width: 50%;
+  color: red;
 }
