@@ -71,7 +71,7 @@ Page({
   },
   navigateDetail: function (e) {
     wx.navigateTo({
-      url: '../division/division?artype=' + e.currentTarget.dataset.artype
+      url: '../departpage/departpage?artype=' + e.currentTarget.dataset.artype
     })
   },
   /** djdk */

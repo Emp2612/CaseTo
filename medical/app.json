@@ -1,12 +1,12 @@
 {
   "pages": [
+    "pages/detail/detail",
+    "pages/homepage/homepage",
     "pages/addinfo/addinfo",
     "pages/addpeople/addpeople",
     "pages/mycenter/mycenter",
-    "pages/detail/detail",
     "pages/departpage/departpage",
     "pages/physiclist/physiclist",
-    "pages/homepage/homepage",
     "pages/directory/directory",
     "pages/inquiry/inquiry",
     "pages/testlist/testlist",

@@ -1,207 +1,179 @@
 <!--pages/detail/detail.wxml-->
-<view class='personinfo'>
-  <scroll-view scroll-y style="height:100%">
-  <view class='personinfo-img'>
-  <view wx:for='{{doctorInfo}}' wx:key=''>111
-      <image class='personinfo-img-src' src="../../images/liaijvn.png"></image>
-      <text class='personinfo-text'>{{item.doctor_name}}</text>
-      <text class='personinfo-unit'>{{item.hosp_name}}</text>
-      <view class='personinfo-rank'>
+<view class='page'>
+  <scroll-view class='personinfo'>
+    <view wx:for='{{doctorInfo}}' wx:key=''>
+      <view class='personinfo-img'>
+        <image class='personinfo-img-src' src="{{item.doctor_face}}"></image>
+        <text class='personinfo-text'>{{item.doctor_name}}</text>
+        <text class='personinfo-unit'>{{item.hosp_name}}</text>
+        <!-- <view class='personinfo-rank'> -->
         <text class='personinfo-rank'>{{item.profession}}</text>
-      </view>
-      <view class='personinfo-icon'>
-        <text class='personinfo-icon'>{{item.consults}}</text>
+        <!-- </view> -->
+        <!-- <view class='personinfo-icon'> -->
+        <text class='personinfo-icon'>关注:{{item.focus}}</text>
         <image class='personinfo-icon-src' src="../../images/attention.png"></image>
-      </view>
-      <view class='personinfo-icon'>
-        <text class='personinfo-icon-subs'>{{item.orders}}</text>
+        <text class='personinfo-icon-subs'>预约:{{item.orders}}</text>
         <image class='personinfo-icon-src1' src="../../images/subscribe.png"></image>
-      </view>
-      <view class='personinfo-icon'>
-        <text class='personinfo-icon-cons'>{{item.consults}}</text>
+        <text class='personinfo-icon-cons'>咨询:{{item.consults}}</text>
         <image class='personinfo-icon-src2' src="../../images/consult.png"></image>
-      </view>
-    </view>
-  </view>
-    
-    <view class='splitbar'>
-      <image class='splitbar-img' src="../../images/bar1.png"></image>
-      <text class='splitbar-text'>医生介绍</text>
-    </view>
-    <view class='introduce'>
-      <text class='introduce-title'>职务与职称：\n</text>
-      <text class='introduce-text'>主任医师、硕士生导师、心血管内科主任，中国医师协会心血管病专家委员会会员，中国介入心脏病学杂志编委。</text>
-      <view class='introduce-line'></view>
-    </view>
-    <view class='introduce' style='margin-top: 20rpx;'>
-      <text class='introduce-title'>诊疗范围：\n</text>
-      <text class='introduce-text'>冠心病药物治疗及冠脉造影、球囊扩张及支架术、高血压病、先心病、心肌病、风心病、心律失常、心力衰竭等。</text>
-    </view>
-    <view class='splitbar'>
-      <image class='splitbar-img' src="../../images/bar2.png"></image>
-      <text class='splitbar-text'>预约挂号</text>
-    </view>
-    <view class='Comments'>
-      <text>注：挂号费由医院自行设定，平台不收取任何额外费用</text>
-    </view>
-    <view class='forms'>
-      <view class='forms-name'>医 院：
-        <input class='forms-name-input' placeholder="昆明延安医院"></input>
-      </view>
-      <view class='forms-name'>科 室：
-        <input class='forms-name-input' placeholder="呼吸内二科"></input>
-      </view>
-    </view>
-    <!-- 坐诊日期btn -->
-    <view class='item'>
-      <text class='item-title'>坐诊日程（一周）</text>
-      <view class='item-btn-ss'>
-      <view class='statemodel'>
-        <view class='item-btn' bindtap="show" style="background-color:{{pageBackgroundColor}}; border-color:{{bordercolor}};">
-          <view class='statemodel'>
-            <text class='item-btn-time' style='font-size:25rpx;'>星期一</text>
-            <text class='item-btn-time' style='font-size:28rpx;'>全</text>
+        <!-- </view> -->
+        <view class='splitbar'>
+          <image class='splitbar-img' src="../../images/bar1.png"></image>
+          <text class='splitbar-text'>医生介绍</text>
+        </view>
+        <view class='introduce'>
+          <text class='introduce-title'>职务与职称：\n</text>
+          <text class='introduce-text'>{{item.intro}}</text>
+          <view class='introduce-line'></view>
+        </view>
+        <view class='introduce' style='margin-top: 20rpx;'>
+          <text class='introduce-title'>诊疗范围：\n</text>
+          <text class='introduce-text'>{{item.speciality}}</text>
+        </view>
+        <view class='splitbar'>
+          <image class='splitbar-img' src="../../images/bar2.png"></image>
+          <text class='splitbar-text'>预约挂号</text>
+        </view>
+        <view class='Comments'>
+          <text>注：挂号费由医院自行设定，平台不收取任何额外费用</text>
+        </view>
+        <view class='forms'>
+          <view class='forms-name'>医 院：
+            <view class='forms-name-input'>{{item.hosp_name}}</view>
           </view>
-          <text class='item-btn-time'>2018-04-16</text>
-          <view class='triangle-position'hidden="{{flag}}" bindtap="hide">
-          <view class='triangle'></view>
-      </view>
-        </view>
-      </view>
-      <view class=' item-btn '>
-        <view class='statemodel'>
-          <text class='item-btn-time' style='font-size:25rpx;'>星期二</text>
-          <text class='item-btn-time' style='font-size:28rpx;color:#ff3333;'>满</text>
-        </view>
-        <text class='item-btn-time'>2018-04-17</text>
-        <view class='triangle-position'>
-          <view class='triangle'></view>
-        </view>
-      </view>
-      <view class='item-btn '>
-        <view class='statemodel'>
-          <text class='item-btn-time' style='font-size:25rpx;'>星期三</text>
-          <text class='item-btn-time' style='font-size:28rpx;color:#ff3333;'>满</text>
-        </view>
-        <text class='item-btn-time'>2018-04-18</text>
-        <view class='triangle-position'>
-          <view class='triangle'></view>
-        </view>
-      </view>
-      <view class='item-btn '>
-        <view class='statemodel'>
-          <text class='item-btn-time' style='font-size:25rpx;'>星期四</text>
-          <text class='item-btn-time' style='font-size:28rpx;'>全</text>
-        </view>
-        <text class='item-btn-time'>2018-04-19</text>
-        <view class='triangle-position'>
-          <view class='triangle'></view>
-        </view>
-      </view>
-      <view class='item-btn'>
-        <view class='statemodel'>
-          <text class='item-btn-time' style='font-size:25rpx;'>星期五</text>
-          <text class='item-btn-time' style='font-size:28rpx;'>全</text>
-        </view>
-        <text class='item-btn-time'>2018-04-20</text>
-        <view class='triangle-position'>
-          <view class='triangle'></view>
-        </view>
-      </view>
-    </view>
-    <!-- 预约弹窗 -->
-   <view class="spanpage" hidden="{{flag}}" bindtap="hide">
-  <view class='spanpage-title-ss'>
-    <text class='spanpage-title'>2018-04-20</text>
-    <text class='spanpage-title'>可预约：222</text>
-  </view>
-  <view class='spanpage-line'></view>
-  <radio-group class='spanpage-radio' bindchange="radioChange">
-    <label>
-      <radio value="{{index}}">
-        <view>08:00-12:00</view>
-      </radio>
-    </label>
-    <label>
-      <radio value="{{index}}">
-        <view>14:00-18:00</view>
-      </radio>
-    </label>
-  </radio-group>
-  <view class='spanpage-btn'>
-    <text class='spanpage-btn-text' style='padding-top:30rpx;'bindtap="show">预约</text>
-  </view>
-</view>
-</view>
-<!-- 就诊人及其信息 -->
-<view class='bookinginfo'hidden="{{flag}}" bindtap="hide">
-  <view class='bookinginfo-title'>
-    <text>就诊人及其他信息</text>
-    <view class='bookinginfo-line'></view>
-  </view>
-  <view class='bookinginfo-massage'>
-    <text class='bookinginfo-massage-ss'>医院：昆明延安医院</text>
-    <text class='bookinginfo-massage-ss'>科室：内科-呼吸内二科</text>
-    <text class='bookinginfo-massage-ss'>医生：李爱军</text>
-    <text class='bookinginfo-massage-ss'>费用：¥35.50</text>
-    <text class='bookinginfo-massage-ss'>时间：2018-04-20  14:00-18:00</text>
-  </view>
-  <view class='bookingforms-ss'>
-    <view class='bookingforms' style='margin-left: 180rpx;'>姓名：
-      <input class='bookingforms-name-input' placeholder="填写真实姓名保证顺利取号"></input>
-    </view>
-    <view class='bookingforms' style='margin-left: 125rpx;padding-top: 20rpx;'>身份证号：
-      <input class='bookingforms-name-input' placeholder="取号时需出示身份证"></input>
-    </view>
-    <view class='bookingforms' style='margin-left: 125rpx;padding-top: 20rpx;'>电话号码：
-      <input class='bookingforms-name-input' placeholder="取号时需出示身份证"></input>
-    </view>
-  </view>
-  <view class='bookingforms-btn'>
-    <text class='bookingforms-btn-text' style='padding-top:30rpx;'>确认挂号</text>
-  </view>
-  
-</view>
-<view class='splitbar'>
-    <image class='splitbar-img' src="../../images/bar3.png"></image>
-    <text class='splitbar-text'>同科推荐</text>
-  </view>
-<!--list-->
-<view class='' style='padding-top:50rpx;'>
-  <view class="nav_section">
-    <view wx:if="{{list[curIndex]}}">
-      <block wx:for="{{list[curIndex]}}" wx:key="item.id">
-        <view class="nav_section_items">
-          <!--image-->
-          <view class="section_image" bindtap="navigateDetail" data-aid="{{item.id}}">
-            <block wx:if="{{item.coverpath}}">
-              <image src="{{item.coverpath}}" mode="aspectFill"></image>
-            </block>
-            <block wx:else>
-              <image src="../../images/9.png" mode="aspectFill"></image>
-            </block>
+          <view class='forms-name'>科 室：
+            <view class='forms-name-input'>{{item.cate_name}}</view>
           </view>
-          <!--content-->
-          <view class="section_cont" bindtap="navigateDetail" data-aid="{{item.id}}">
-            <view class="section_cont_sub">
-              <text>{{item.subject}}</text>
-              <view class='section_cont_rank'>
-                <text>{{item.rank}}</text>
-              </view>
+        </view>
+      </view>
+
+      <!-- 坐诊日期btn -->
+      <view class='item'>
+        <text class='item-title'>坐诊日程（一周）</text>
+        <view class='item-btn-ss'>
+          <view class='statemodel' wx:for="{{date}}" wx:key=''>
+            <view class='item-btn' id="{{index}}" bindtap='timeSelected'>
+              <block wx:if="{{index==clickbtnId}}">
+                <view class='statemodel'>
+                  <text class='item-btn-time' style='font-size:25rpx;'>星期{{item.week}}</text>
+                  <text class='item-btn-time' style='font-size:28rpx;'>全</text>
+                </view>
+                <text class='item-btn-time'>{{item.date}}</text>
+                <view class='triangle-position'>
+                  <view class='triangle'></view>
+                </view>
+              </block>
+              <block wx:else>
+                <view class='statemodel'>
+                  <text class='item-btn-time' style='font-size:25rpx;'>星期{{item.week}}</text>
+                  <text class='item-btn-time' style='font-size:28rpx;'>全</text>
+                </view>
+                <text class='item-btn-time'>{{item.date}}</text>
+                <view class='triangle-position'>
+                  <view class='triangle'></view>
+                </view>
+              </block>
             </view>
-            <view class="section_cont_quantity">预约量：{{item.quantity}}</view>
-            <view class="section_cont_quantity">好评度：{{item.evaluate}}</view>
-            <view style='margin-top:20rpx;'>擅长：{{item.message}}</view>
-          </view>
-          <!--book-->
-          <view class="section_book" bindtap="bookTap" data-aid="{{item.id}}">
-            <text>挂号</text>
           </view>
         </view>
-      </block>
+        <!-- 预约弹窗 -->
+        <view class="'spanpage'{{showView?'spanpage-view-hide':'spanpage-view-show'}}">
+          <view class='spanpage-title-ss'>
+            <text class='spanpage-title'>{{spanDate}}</text>
+            <text class='spanpage-title'>可预约：{{orderNum}}</text>
+          </view>
+          <view class='spanpage-line'></view>
+          <radio-group class='spanpage-radio' name='attended-time'>
+            <label>
+              <radio value="08:00-12:00">
+                <view>08:00-12:00</view>
+              </radio>
+            </label>
+            <label>
+              <radio value="14:00-18:00">
+                <view>14:00-18:00</view>
+              </radio>
+            </label>
+          </radio-group>
+          <view class="spanpage-btn">
+            <text class='spanpage-btn-text' style='padding-top:30rpx;' bindtap="orderSubmit">预约</text>
+          </view>
+        </view>
+      </view>
+      <!-- 就诊人及其信息 -->
+      <view class="'bookinginfo' {{showView?'spanpage-view-hide':'spanpage-view-show'}}">
+        <view class='bookinginfo-title'>
+          <text>就诊人及其他信息</text>
+          <view class='bookinginfo-line'></view>
+        </view>
+        <form bindsubmit="formSubmit" bindreset="formReset">
+          <view class='bookinginfo-massage'>
+            <text class='bookinginfo-massage-ss'>医院：{{item.hosp_name}}</text>
+            <text class='bookinginfo-massage-ss'>科室：{{item.cate_name}}</text>
+            <text class='bookinginfo-massage-ss'>医生：{{item.doctor_name}}</text>
+            <text class='bookinginfo-massage-ss'>费用：¥{{money}}</text>
+            <text class='bookinginfo-massage-ss'>时间：{{spanDate}}  14:00-18:00</text>
+          </view>
+          <view class='bookingforms-ss'>
+            <view class='bookingforms' style='margin-left: 180rpx;'>姓名：
+              <input class='bookingforms-name-input' placeholder="填写真实姓名保证顺利取号" type="text" name='patient'></input>
+            </view>
+            <view class='bookingforms' style='margin-left: 125rpx;padding-top: 20rpx;'>身份证号：
+              <input class='bookingforms-name-input' placeholder="取号时需出示身份证" type="idcard" name='IDcard'></input>
+            </view>
+            <view class='bookingforms' style='margin-left: 125rpx;padding-top: 20rpx;'>电话号码：
+              <input class='bookingforms-name-input' placeholder="取号时需出示身份证" type="number" name='phone'></input>
+            </view>
+          </view>
+          <button formType='submit' style="background-color: #30c4a2;border-radius: 25rpx;color:#fff;font-family: Microsoft YaHei ;width:200rpx;margin-top:30rpx;">确认挂号</button>
+          <!-- <view class='bookingforms-btn' formType='submit'>
+            <button class='bookingforms-btn-text' style='padding-top:30rpx;'>确认挂号</button>
+          </view> -->
+        </form>
+      </view>
+      <!--list-->
+      <view>
+        <view class='splitbar' style='margin-left: 30rpx;'>
+          <image class='splitbar-img' src="../../images/bar3.png"></image>
+          <text class='splitbar-text'>同科推荐</text>
+        </view>
+        <view style='padding-top:80rpx;'>
+          <view class="nav_section">
+            <view wx:if="{{recomDoct}}">
+              <block wx:for="{{recomDoct}}" wx:key="item.id">
+                <view class="nav_section_items">
+                  <!--image-->
+                  <view class="section_image" bindtap="navigateDetail" data-aid="{{item.id}}">
+                    <block wx:if="{{item.doctor_face}}">
+                      <image src="https://cs.kmmyxb.cn/{{item.doctor_face}}" mode="aspectFill"></image>
+                    </block>
+                    <block wx:else>
+                      <image src="../../images/9.png" mode="aspectFill"></image>
+                    </block>
+                  </view>
+                  <!--content-->
+                  <view class="section_cont" bindtap="navigateDetail" data-aid="{{item.id}}">
+                    <view class="section_cont_sub">
+                      <text>{{item.doctor_name}}</text>
+                      <view class='section_cont_rank'>
+                        <text>{{item.profession}}</text>
+                      </view>
+                    </view>
+                    <view class="section_cont_quantity">预约量：{{item.orders}}</view>
+                    <!-- <view class="section_cont_quantity">好评度：{{item.evaluate}}</view> -->
+                    <view style='margin-top:45rpx;'>擅长：{{item.speciality}}</view>
+                  </view>
+                  <!--book-->
+                  <view class="section_book" bindtap="bookTap" data-aid="{{item.id}}">
+                    <text>挂号</text>
+                  </view>
+                </view>
+              </block>
+            </view>
+            <!-- <view wx:else>暂无数据</view> -->
+          </view>
+        </view>
+      </view>
     </view>
-    <!-- <view wx:else>暂无数据</view> -->
-  </view>
-</view>
-</scroll-view>
+  </scroll-view>
 </view>
