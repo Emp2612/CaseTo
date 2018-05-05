@@ -12,16 +12,16 @@ Page({
     pageBackgroundColor: '#fff',
     showView: true,
     bordercolor: '#000',
-    doctorInfo: [],
-    bookBtn: [],
+    doctorInfo: [],//医生信息
+    bookBtn: [],//坐班时间
     dataTmie: [],
-    date: [],
-    spanData: [],
-    orderNum: '',
-    spanDate: '',
+    date: [],//日期
+    spanData: [],//弹出框数组
+    orderNum: '',//可预约数量
+    spanDate: '',//弹出框日期数据
     money: '',
-    recomDoct: [],
-    patient: "",
+    recomDoct: [],//同科推荐
+    patient: "",//挂号人姓名
     phone: "",
     IDcard: "",
     // bookBtn: util.formatTime(new Date())
@@ -87,6 +87,7 @@ Page({
       },
     })
   },
+  //坐诊时间选择
   timeSelected: function (event) {
     this.setData({
       clickbtnId: event.currentTarget.id, // 设置背景颜色数据
@@ -103,6 +104,7 @@ Page({
       showView: (!this.data.showView)
     })
   },
+  // 预约数据提交
   formSubmit: function (e) {
     console.log('form发生了submit事件，携带数据为：', e.detail.value)
     let { patient, phone, IDcard } = e.detail.value;

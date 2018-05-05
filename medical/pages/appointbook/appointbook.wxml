@@ -1,2 +1,2 @@
 <!--pages/appointbook/appointbook.wxml-->
-<text>pages/appointbook/appointbook.wxml</text>
+<view class='page'></view>

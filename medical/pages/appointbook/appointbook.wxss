@@ -1,1 +1,4 @@
 /* pages/appointbook/appointbook.wxss */
+.page{
+  width: 100%;
+}
